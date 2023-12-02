@@ -42,12 +42,9 @@ eval_recall = recall_at_k(
     test, top_k, col_user="user_id", col_item="item_id", col_rating="rating", k=TOP_K
 )
 
+print("| Model | Top K | MAP | NDCG | Precision@K | Recall@K |")
+print("| ----- | ----- | --- | ---- | ----------- | -------- |")
 print(
-    "Model:\t",
-    "Top K:\t\t%d" % TOP_K,
-    "MAP:\t\t%f" % eval_map,
-    "NDCG:\t\t%f" % eval_ndcg,
-    "Precision@K:\t%f" % eval_precision,
-    "Recall@K:\t%f" % eval_recall,
-    sep="\n",
+    "| SAR | %d | %f | %f | %f | %f |"
+    % (TOP_K, eval_map, eval_ndcg, eval_precision, eval_recall)
 )
