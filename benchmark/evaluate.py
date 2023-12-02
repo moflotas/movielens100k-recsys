@@ -15,16 +15,15 @@ TOP_K = 10
 TEST_DATASET_PATH = Path("../data/interim/ml-100k/test.csv")
 MODEL_PATH = Path("../models/sar-best.pkl")
 
+
 with open(MODEL_PATH, "rb") as f:
     model = pickle.load(f)
-
 test = pd.read_csv(TEST_DATASET_PATH)
 
 with Timer() as test_time:
     top_k = model.recommend_k_items(test, top_k=TOP_K, remove_seen=True)
 
 print("Took {} seconds for prediction.".format(test_time.interval))
-
 top_k = model.recommend_k_items(test, remove_seen=True)
 
 
