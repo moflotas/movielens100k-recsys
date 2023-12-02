@@ -12,7 +12,7 @@ import pandas as pd
 
 # Load the model and the test set
 TOP_K = 10
-TEST_DATASET_PATH = Path("../data/interim/ml-100k/test.csv")
+TEST_DATASET_PATH = Path("data/ml-100k/test.csv")
 MODEL_PATH = Path("../models/sar-best.pkl")
 
 

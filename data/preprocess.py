@@ -22,5 +22,9 @@ train, test = python_stratified_split(
 if not os.path.exists("../data/interim/ml-100k"):
     os.makedirs("../data/interim/ml-100k")
 
-train.to_csv("../data/interim/ml-100k/train.csv", index=False)
-test.to_csv("../data/interim/ml-100k/test.csv", index=False)
+if not os.path.exists("../benchmark/data/ml-100k"):
+    os.makedirs("../benchmark/data/ml-100k")
+
+train.to_csv("interim/ml-100k/train.csv", index=False)
+test.to_csv("interim/ml-100k/test.csv", index=False)
+test.to_csv("../benchmark/data/ml-100k/test.csv", index=False)
